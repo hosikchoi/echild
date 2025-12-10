@@ -1,0 +1,8 @@
+project_root/
+ ├─ data/
+ │   ├─ meta_information.csv          # 지금 주신 코드북
+ │   ├─ theme_tags.csv                # 변수 → 테마(건강/고용/소득...) 매핑
+ │   └─ scenario_rules.json           # 시나리오 룰셋
+ ├─ src/
+ │   └─ generate_pid_summary_and_embeddings.py
+ └─ README.md
