@@ -1,0 +1,36 @@
+{
+  "health_to_employment": {
+    "name": "건강 악화 이후 근로 취약성 심화 시나리오",
+    "description": "건강/정신건강/의료비 관련 이벤트 발생 후 일정 기간 내 고용/근로 관련 불리한 상태가 새로 발생하는 패턴",
+    "health_vars": ["N03", "V28", "S1", "S2", "S3", "S5"],
+    "employment_vars": ["V14", "V12", "V13", "V29", "S30"],
+    "window_chasu": 4,
+    "template": "건강·의료 관련 위험 이벤트({health_vars})가 {t_health_first} 차수 전후로 나타난 이후, {window_desc} 이내에 고용·근로 관련 불리한 상태({employment_vars})가 새로 발생하여 건강 악화 이후 근로 취약성이 이어지는 양상이 관측됩니다."
+  },
+  "income_drop_to_benefit": {
+    "name": "소득 급감 이후 복지급여 수급 확대 시나리오",
+    "description": "소득인정액 감소 또는 급여 수급지표 증가가 단기간에 집중되는 패턴",
+    "income_var": "S34",
+    "benefit_vars": ["S35", "S36", "S37", "S38", "S39", "S40"],
+    "drop_ratio": 0.3,
+    "min_new_benefits": 2,
+    "window_chasu": 4,
+    "template": "소득인정액(S34)이 {t_income_drop} 차수에 직전 대비 {drop_percent}% 이상 감소하고, 같은 기간 또는 이후 {window_desc} 동안 복지급여 수급 지표({benefit_vars})가 새로 {num_new_benefits}개 이상 발생하여 소득 급감 이후 복지수급 확대 구간이 확인됩니다."
+  },
+  "debt_cluster": {
+    "name": "채무·체납 누적 시나리오",
+    "description": "공과금 체납, 임대료 체납, 금융연체 등이 같은 시기 또는 단기간에 동시에 발생하는 패턴",
+    "debt_vars": ["V1", "V2", "V3", "V4", "V24", "V27"],
+    "min_active": 2,
+    "window_chasu": 2,
+    "template": "단전·단수·전기료·임대료·금융연체({debt_vars}) 중 최소 {min_active}개 이상이 {window_desc} 내에 연속 또는 동시에 1로 관측되어, 주거·채무 측면의 압박이 누적되는 시기가 존재합니다."
+  },
+  "household_structure_plus_childrisk": {
+    "name": "가구구조 취약성 + 아동위험 중첩 시나리오",
+    "description": "한부모·조손 등의 가구구조 취약성과 아동위험(N지표) 발생이 같은 시기 혹은 근접 시기에 함께 나타나는 패턴",
+    "household_vars": ["S11", "S12", "S13", "SV03"],
+    "childrisk_vars": ["N01", "N02", "N03", "N05", "N06", "N08", "N09", "N10"],
+    "window_chasu": 4,
+    "template": "한부모·조손·미성년자 가구 등 가구구조 취약성 지표({household_vars})가 나타나는 시기에, {window_desc} 내에 위기아동 지표({childrisk_vars})가 함께 관측되어 돌봄 공백과 아동위험이 중첩되는 국면이 존재합니다."
+  }
+}
